@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://img.lovepik.com/free-png/20210926/lovepik-cartoon-game-console-png-image_401486010_wh1200.png">
+
+    <title>Nuestro juego</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* Animación de fondo difuminado */
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6, #ffb3ba, #b8e994);
+            background-size: 400% 400%;
+            animation: fondoAnimado 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            background-color: white;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .game-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #ff6f61;
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .game-frame:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        button {
+            padding: 12px 30px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #f5564e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 111, 97, 0.3);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>¡Bienvenido a nuestro Juego!</h1>
+        <!-- Aquí puedes poner un iframe o el código del juego -->
+        <iframe class="game-frame" src="https://scratch.mit.edu/projects/1078637060/embed"></iframe>
+        <br>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+    </div>
+
+    <script>
+        function reiniciarJuego() {
+            const iframe = document.querySelector('.game-frame');
+            iframe.src = iframe.src; // Reinicia el iframe
+        }
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Interactiva</title>
+    <style>
+        /* Contenedor de la nota para centrarla y fijarla en la pantalla */
+        .nota-fija {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 180px;
+            padding: 10px;
+            background-color: #ffefc1;
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: movimientoArribaAbajo 1.5s infinite;
+        }
+
+        /* Animación para el movimiento de la nota */
+        @keyframes movimientoArribaAbajo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nota-fija">
+        📌 Nota: Recuerda presionar la bandera verde para poder ir al juego.
+    </div>
+</body>
+</html>
+
+

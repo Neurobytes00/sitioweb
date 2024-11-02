@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\en.png">
+
+    <title>¡Furia!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ffebee, #ffcccb, #ef5350, #e57373);
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .flip-btn {
+            background-color: #ef5350;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #b71c1c;
+            text-shadow: 0 0 5px rgba(183, 28, 28, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+    <h1></h1>
+
+    <!-- Tarjetas de información -->
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.17.23 PM (1).jpeg" alt="Furia imagen 1">
+                <h5 class="card-title"></h5>
+                <p></p>
+                <a href="pagina_furia_1.html" class="btn flip-btn">Más información</a>
+            </div>
+            <div class="back">
+                <h5 class="card-title">¿Qué es La Furia?</h5>
+                <p>La Furia es una emoción intensa que se manifiesta como ira o enojo.</p>
+                <a href="infofuria1.html" class="btn flip-btn">Más consejos</a>
+            </div>
+        </div>
+
+        <!-- Segunda tarjeta -->
+        <div class="card">
+            <div class="front">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.15.19 PM (2).jpeg" alt="Furia imagen 2">
+                <h5 class="card-title"></h5>
+                <p></p>
+                <a href="pagina_furia_2.html" class="btn flip-btn">Más información</a>
+            </div>
+            <div class="back">
+                <h5 class="card-title">Efectos de La Furia</h5>
+                <p>Puede afectar tu salud mental y tus relaciones si no se maneja adecuadamente.</p>
+                <a href="infofuria2.html" class="btn flip-btn">Más consejos</a>
+            </div>
+        </div>
+
+        <!-- Tercera tarjeta -->
+        <div class="card">
+            <div class="front">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.17.23 PM (1).jpeg" alt="Furia imagen 3">
+                <h5 class="card-title"></h5>
+                <p></p>
+                <a href="pagina_furia_3.html" class="btn flip-btn">Más información</a>
+            </div>
+            <div class="back">
+                <h5 class="card-title">Consejos para Gestionarla</h5>
+                <p>Practica actividades físicas, realiza hobbies o escucha música.</p>
+                <a href="infofuria3.html" class="btn flip-btn">Más consejos</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Crear partículas de "fuego"
+        function createParticles() {
+            const particleCount = 50; // Número de partículas de "fuego"
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.backgroundColor = `rgba(255, ${Math.floor(Math.random() * 80 + 20)}, 0, 0.8)`;
+                document.body.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/3/1z7h6n5/zXgOn8g7yQJ5O7/dgG1t+44SmDym" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-wX1n0X5xQ6Pe4pcPqz+M+DP2LR7Hsb7DpshRA0B/0G8OnRBlApsK7JGVh4F5hC5" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Interactivo Dinámico</title>
+    <style>
+        /* Estilo del cuerpo para centrar el botón */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Fondo claro */
+        }
+
+        /* Botón interactivo */
+        .interactive-button {
+            background: linear-gradient(135deg, #ff4d4d, #ff6666); /* Degradado rojo */
+            color: white;
+            font-size: 20px; /* Aumentar tamaño del texto */
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px; /* Bordes más redondeados */
+            cursor: pointer;
+            text-decoration: none; /* Sin subrayado */
+            font-family: 'Arial', sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-align: center; /* Centrar texto */
+            position: relative; /* Para el efecto de pulso */
+            overflow: hidden; /* Para contener el pseudo-elemento */
+        }
+
+        /* Efecto de pulso */
+        .interactive-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s ease;
+            z-index: 0; /* Enviar al fondo */
+        }
+
+        /* Efecto al pasar el cursor */
+        .interactive-button:hover {
+            transform: scale(1.1); /* Aumenta el tamaño */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            color: #ffcccb; /* Cambia el color del texto */
+        }
+
+        .interactive-button:hover::after {
+            transform: translate(-50%, -50%) scale(1); /* Pulso */
+        }
+
+        /* Asegura que el texto esté en primer plano */
+        .interactive-button span {
+            position: relative;
+            z-index: 1; /* Traer al frente */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón enlazando a otra página -->
+    
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha y Nota Informativa</title>
+    <style>
+        /* Contenedor para centrar la flecha y la nota */
+        .contenedor-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        /* Flecha animada */
+        .flecha {
+            width: 20px;
+            height: 20px;
+            border-top: 4px solid #333;
+            border-right: 4px solid #333;
+            transform: rotate(45deg);
+            animation: bounce 1s infinite;
+        }
+
+        /* Animación de la flecha */
+        @keyframes bounce {
+            0%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+        }
+
+        /* Estilo de la nota informativa */
+        .nota {
+            padding: 10px 15px;
+            background-color: #f0f8ff;
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-left: 4px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-info">
+        <div class="flecha"></div>
+        <div class="nota">
+            ¡Tan solo pasar el mouse por algunas de nuestras tarjetas y presionar el boton que hay en ellas puedes acceder a la informacion!
+        </div>
+    </div>
+</body>
+</html>
+
+

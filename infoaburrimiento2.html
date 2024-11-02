@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\ab.png">
+
+    <title>¡Aburrimiento!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #d0e9a1, #5a8a3b, #7cbd4b, #a2c6a5);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            position: sticky;
+            top: 20px; /* Espacio desde la parte superior */
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #5a8a3b;
+            transform: scale(1.1);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: white;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flip-btn {
+            background-color: #5a8a3b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #3e6a2b;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            color: #343a40;
+        }
+
+        .divider {
+            border-top: 2px solid #28a745; /* Línea verde */
+            margin: 20px 0;
+        }
+
+        .footer-images img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Interactivas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #a8d5ba; /* Verde claro */
+            color: #333;
+            width: 250px; /* Anchura más grande */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .card-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .card.active .card-content {
+            display: block; /* Muestra el contenido al hacer clic */
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="card" onclick="toggleCard(this)">
+        <h3 class="card-title">Falta de Estímulo Intelectual</h3>
+        <div class="card-content">
+            <p>Cuando una actividad es demasiado simple o repetitiva, y además hay dificultad para concentrarse, la mente se aburre fácilmente. La combinación de una falta de estímulo intelectual junto con una baja capacidad de concentración hace que la tarea carezca de interés y se vuelva tediosa rápidamente.
+<br>
+La falta de desafío en una actividad, junto con dificultades para concentrarse, hace que la mente se aburra rápidamente. 
+            </p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <h3 class="card-title">Falta de Propósito o Significado</h3>
+        <div class="card-content">
+            <p>Cuando una actividad no tiene propósito o significado personal y no contribuye a metas o valores, es más probable que la persona pierda interés y se aburra.
+<br>
+Esto es especialmente común en personas con una tendencia a buscar experiencias nuevas y estimulantes, ya que tienen mayor necesidad de variedad y son más propensas a aburrirse en situaciones monótonas o predecibles.
+            </p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <h3 class="card-title">Aislamiento Social y  Falta de Autoconocimiento</h3>
+        <div class="card-content">
+            <p>La falta de interacción social y de actividades compartidas puede llevar al aburrimiento, especialmente en quienes necesitan conexión frecuente para sentirse motivados.
+<br>
+ Esto se agrava en personas que no conocen bien sus propios intereses o carecen de creatividad, ya que les resulta difícil encontrar actividades que realmente disfruten y les resulten atractivas.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleCard(card) {
+        // Cierra todas las tarjetas abiertas
+        document.querySelectorAll('.card').forEach(c => {
+            if (c !== card) c.classList.remove('active');
+        });
+
+        // Alterna el contenido de la tarjeta seleccionada
+        card.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
+<script>
+        // Puedes agregar más imágenes dinámicamente
+        const container = document.querySelector('.text-container');
+        const numImages = 1; // Número de imágenes a agregar
+
+        for (let i = 0; i < numImages; i++) {
+            const img = document.createElement('img');
+            img.src = `C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.15.19_PM__3_-removebg-preview.png`; // Cambiar el texto de la imagen
+            img.alt = '';
+            img.className = 'moving-image';
+            container.appendChild(img);
+        }
+    </script>
+</body>
+</html>
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Vintage sobre la Ansiedad</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Fondo general */
+            font-family: 'Arial', sans-serif; /* Fuente general */
+            height: 100vh; /* Altura completa de la ventana */
+            margin: 0; /* Sin margen */
+            overflow: hidden; /* Sin scroll */
+            display: flex; /* Para centrar el contenedor */
+            flex-wrap: wrap; /* Para permitir el ajuste de las notas */
+            justify-content: center; /* Centrado horizontal */
+            align-items: center; /* Centrado vertical */
+        }
+
+        .note {
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+            border: 2px solid #6a5acd; /* Borde en tono morado */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 10px; /* Espaciado interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            width: 150px; /* Ancho de la nota */
+            text-align: center; /* Centrar el texto */
+            font-family: 'Courier New', Courier, monospace; /* Fuente estilo vintage */
+            position: absolute; /* Posicionamiento absoluto */
+            cursor: move; /* Cambiar el cursor al mover */
+            user-select: none; /* No permitir selección de texto */
+        }
+
+        .note h3 {
+            color: #6a5acd; /* Color del título */
+            margin: 0; /* Sin margen */
+            font-size: 1rem; /* Tamaño del título */
+        }
+
+        .note p {
+            color: #333; /* Color del texto */
+            line-height: 1.2; /* Espaciado entre líneas */
+            margin: 5px 0 0; /* Espaciado */
+        }
+    </style>
+</head>
+<body>
+
+    
+<br>
+<br>
+
+<!-- Botón de audio -->
+        <button class="audio-button" onclick="toggleAudio()">
+            <img src="https://img.icons8.com/ios-filled/50/ff4d4d/speaker.png" alt="Audio">
+        </button>
+        
+        <audio id="audio" src="C:\Users\maria\Downloads\WhatsApp Audio 2024-10-26 at 1.43.15 PM (2).mpeg"></audio>
+    </div>
+
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Recordatorio Móviles</title>
+    <style>
+        /* Estilo base para las notas */
+        .nota-fija {
+            position: fixed;
+            top: 40%; /* Ajustar para centrar verticalmente */
+            width: 220px; /* Ancho de la nota */
+            padding: 15px;
+            background-color: #98fb98; /* Color verde claro */
+            color: #333;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: movimientoArribaAbajo 2s ease-in-out infinite; /* Animación */
+        }
+
+        /* Animación para el movimiento de las notas */
+        @keyframes movimientoArribaAbajo {
+            0%, 100% {
+                transform: translateY(-50%);
+            }
+            50% {
+                transform: translateY(-30%); /* Ajusta la distancia del movimiento */
+            }
+        }
+
+        /* Estilos específicos para cada nota */
+        .nota-1 {
+            left: 20px; /* Posición a la izquierda */
+        }
+
+        .nota-2 {
+            right: 20px; /* Posición a la derecha */
+        }
+
+        /* Estilo de la imagen */
+        .nota-fija img {
+            width: 30px; /* Tamaño de las imágenes */
+            height: auto; /* Mantiene la relación de aspecto */
+            position: absolute; /* Para posicionar las imágenes */
+            top: 10px; /* Espacio desde el borde superior */
+        }
+
+        /* Posiciones de las imágenes */
+        .nota-1 img {
+            left: 10px; /* Imagen a la izquierda */
+        }
+
+        .nota-2 img {
+            right: 10px; /* Imagen a la derecha */
+        }
+    </style>
+</head>
+<body>
+    <div class="nota-fija nota-1">
+        <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.22_PM-removebg-preview.png" alt="Icono Nota 1">
+        📝 Recordatorio: ¡Al tocar la tarjeta aparecera la informacion!
+    </div>
+    <div class="nota-fija nota-2">
+        <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.22_PM-removebg-preview.png" alt="Icono Nota 2">
+        📝 Recordatorio: ¡A veces, la vida se siente como un libro sin páginas que leer!
+    </div>
+
+    
+</body>
+</html>
+
+
+

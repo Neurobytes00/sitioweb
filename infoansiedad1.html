@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\an.png">
+
+    <title>¡¿Que es?!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #e8eaf6, #d1c4e9, #b39ddb, #9fa8da);
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fondo de estrellas dinámicas */
+        .star {
+            width: 5px;
+            height: 5px;
+            background-color: #4a148c;
+            position: absolute;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out alternate;
+            box-shadow: 0 0 10px rgba(74, 20, 140, 0.7);
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-top: 10px;
+            color: #4a148c;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            justify-content: center; /* Centra la barra de navegación */
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #274B79;
+            text-shadow: 0 0 5px rgba(39, 75, 121, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <h1>¿Que es La Ansiedad?</h1>
+
+    <!-- Interactive Stars in the Background -->
+    <script>
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            const size = Math.random() * 5 + 2 + "px";
+            star.style.width = size;
+            star.style.height = size;
+
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 5000); // Stars disappear after 5 seconds
+        }
+
+        setInterval(createStar, 150); // Add new star every 150ms
+    </script>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarjetas Interactivas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #4a148c;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #d1c4e9, #b39ddb, #9575cd);
+            height: 100px;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #4a148c;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+            transition: opacity 0.3s ease;
+        }
+
+        .more-info {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .card.expanded .more-info {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h2></h2>
+
+<div class="card-container">
+    <!-- Tarjeta 1 -->
+    <div class="card" onclick="toggleInfo(this)">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h3 class="card-title"></h3>
+            <p class="card-text">La ansiedad es una emoción humana básica que todos experimentamos en diferentes momentos de nuestras vidas. Es un mecanismo de defensa que nos ayuda a prepararnos para enfrentar situaciones desafiantes.</p>
+            <p class="more-info">La ansiedad puede ser útil en pequeñas dosis, ya que puede motivarnos a actuar y a mantenernos alerta ante peligros. Sin embargo, cuando la ansiedad se vuelve excesiva o desproporcionada en relación con la situación que la provoca, puede convertirse en un trastorno que afecta negativamente nuestra vida cotidiana.</p>
+        </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="card" onclick="toggleInfo(this)">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h3 class="card-title"></h3>
+            <p class="card-text">La ansiedad no tratada puede tener un impacto significativo en la calidad de vida. Puede interferir en el rendimiento laboral o académico, afectar las relaciones interpersonales y contribuir a problemas de salud física.</p>
+            <p class="more-info">Muchas personas con ansiedad tienden a aislarse, lo que puede llevar a la soledad y la depresión. También pueden recurrir a mecanismos de afrontamiento poco saludables, como el abuso de sustancias.</p>
+        </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card" onclick="toggleInfo(this)">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h3 class="card-title"></h3>
+            <p class="card-text">La ansiedad, aunque es una respuesta emocional natural que nos protege y nos prepara para enfrentar situaciones desafiantes, puede convertirse en un trastorno debilitante cuando se presenta de forma intensa y persistente. E</p>
+            <p class="more-info">ste tipo de ansiedad no solo afecta a la persona que la padece, sino que también puede tener un impacto significativo en sus relaciones, su desempeño laboral y su salud física.Es crucial que tanto las personas que experimentan ansiedad como sus seres queridos reconozcan los signos y síntomas asociados a esta condición. </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleInfo(card) {
+        card.classList.toggle("expanded");
+    }
+</script>
+
+</body>
+</html>
+<br>
+<br> 
+
+<!-- Botón de audio -->
+       <button class="audio-button" onclick="toggleAudio()">
+            <img src="https://img.icons8.com/ios-filled/50/ff4d4d/speaker.png" alt="Audio">
+        </button>
+         
+        <audio id="audio" src="C:\Users\maria\Downloads\WhatsApp Audio 2024-10-29 at 7.19.35 AM.mpeg"></audio>
+    </div>
+
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

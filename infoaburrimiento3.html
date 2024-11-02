@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\ab.png">
+
+    <title>¡Aburrimiento!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #d0e9a1, #5a8a3b, #7cbd4b, #a2c6a5);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            position: sticky;
+            top: 20px; /* Espacio desde la parte superior */
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #5a8a3b;
+            transform: scale(1.1);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: white;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flip-btn {
+            background-color: #5a8a3b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #3e6a2b;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            color: #343a40;
+        }
+
+        .divider {
+            border-top: 2px solid #28a745; /* Línea verde */
+            margin: 20px 0;
+        }
+
+        .footer-images img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Elegante y Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f1f8f5; /* Fondo suave y claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4a8a3d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 3em; /* Título más grande */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos del contenedor del listado */
+        .listado {
+            width: 100%;
+            max-width: 800px; /* Contenedor más ancho */
+            margin: 20px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* Fondo blanco para mayor elegancia */
+            padding: 20px; /* Espaciado interno */
+        }
+
+        /* Estilos de cada elemento de la lista */
+        .item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Cambiar el cursor al pasar sobre el elemento */
+            transition: transform 0.3s, box-shadow 0.3s; /* Efecto de transformación */
+            border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+            margin-bottom: 15px; /* Espaciado entre elementos */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        .item:hover {
+            box-shadow: 0 10px 25px rgba(74, 138, 61, 0.3); /* Sombra al pasar el ratón */
+            transform: translateY(-4px); /* Levantar el elemento ligeramente */
+        }
+
+        .item h2 {
+            margin: 0;
+            padding: 15px;
+            font-size: 1.8em; /* Tamaño de fuente mayor */
+            background-color: #66bb6a; /* Verde elegante */
+            color: #ffffff;
+            border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+            transition: background-color 0.3s; /* Transición de color */
+        }
+
+        /* Cambiar el color al pasar el ratón sobre el título */
+        .item:hover h2 {
+            background-color: #5aaf5a; /* Color más oscuro al hover */
+        }
+
+        /* Estilos para el contenido oculto */
+        .contenido {
+            padding: 20px;
+            background-color: #e8f5e9; /* Fondo claro para el contenido */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+        }
+
+        .item.activo .contenido {
+            max-height: 500px; /* Mayor altura para más contenido */
+            padding: 20px; /* Padding visible al expandir */
+        }
+
+        /* Estilo para los párrafos en contenido */
+        .contenido p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555555;
+            padding-left: 10px; /* Espaciado a la izquierda para un mejor diseño */
+        }
+
+        /* Estilo de botón de información */
+        .info-button {
+            background-color: #a5d6a7; /* Color del botón */
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+            display: inline-block; /* Mostrar botón por defecto */
+            text-align: center; /* Centrar texto */
+        }
+
+        .info-button:hover {
+            background-color: #8bc34a; /* Color más oscuro al hover */
+            transform: translateY(-3px); /* Efecto de levantamiento */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="listado">
+        <h1></h1>
+        
+        <!-- Elemento 1 -->
+        <div class="item" onclick="toggleItem(this)">
+            <h2>Buscar Nuevas Actividades Y Aprender Algo Nuevo</h2>
+            <div class="contenido">
+                <p>1. Explorar Hobbies: Probar cosas nuevas como la pintura, la fotografía o aprender un instrumento puede ser revitalizante.</p>
+                <br>
+                   
+                <p>2. Ejercicio: El ejercicio físico o un deporte nuevo estimula tanto el cuerpo como la mente.</p>
+                 <br>
+                <p>3. Lectura: Leer sobre temas de interés puede ampliar tus horizontes y combatir el aburrimiento.</p>
+                 <br>
+                <p>4. Cursos en línea: Considera inscribirte en plataformas educativas para aprender nuevas habilidades.</p>
+                 <br>
+                <p>5. Viajar: Conocer nuevos lugares puede ofrecerte nuevas perspectivas y experiencias.</p>
+             
+            </div>
+        </div>
+
+        <!-- Elemento 2 -->
+        <div class="item" onclick="toggleItem(this)">
+            <h2>Conectar con Otros y Practicar  Meditación</h2>
+            <div class="contenido">
+                <p>1.Socializar: Hablar con amigos o participar en actividades grupales puede aportarte nuevas experiencias y perspectivas.
+                    <br>
+                    <br>
+                2,Voluntariado: Contribuir a una causa genera satisfacción y reduce el aburrimiento.</p>
+                <br>
+                 <br>
+                <p>3.La meditación ayuda a estar presente y a disfrutar más de lo cotidiano, reduciendo la sensación de aburrimiento.</p>
+            
+            </div>
+        </div>
+
+        <!-- Elemento 3 -->
+        <div class="item" onclick="toggleItem(this)">
+            <h2>Establecer Metas y Cambiar la Rutina</h2>
+            <div class="contenido">
+                <p>El aburrimiento puede ser una señal de que es momento de hacer un cambio o de explorar nuevas facetas de uno mismo. Al adoptar algunas de estas estrategias, puedes no solo combatir el aburrimiento, sino también enriquecer tu vida y descubrir nuevas pasiones.</p>
+                <br>
+                 <br>
+                <p>Añade más puntos o consejos que consideres importantes para el tema.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para expandir y colapsar el contenido
+        function toggleItem(element) {
+            element.classList.toggle("activo");
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+        
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor principal de las notas */
+        .notas-contenedor {
+            width: 90%;
+            max-width: 700px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Estilo de cada nota */
+        .nota {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            width: 220px;
+            padding: 15px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Efecto de hover */
+        .nota:hover {
+            transform: scale(1.05);
+            background-color: #e0f7fa;
+        }
+
+        /* Estilo de la imagen */
+        .nota img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #009688;
+        }
+
+        /* Estilo del texto en la nota */
+        .nota-content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nota-content h2 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #00796b;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nota-content p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notas-contenedor">
+        <!-- Nota 1 -->
+        <div class="nota">
+            <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.22_PM__1_-removebg-preview.png" alt="Imagen 1">
+            <div class="nota-content">
+                <h2></h2>
+                <p>""El aburrimiento es una invitación al cambio."</p>
+            </div>
+        </div>
+
+        <!-- Nota 2 -->
+        <div class="nota">
+            <img src="C:\Users\maria\Downloads\ab.png" alt="Imagen 2">
+            <div class="nota-content">
+                <h2></h2>
+                <p>"Cambia la rutina, renueva la vida."</p>
+            </div>
+        </div>
+
+        <!-- Nota 3 -->
+        <div class="nota">
+            <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.15.19_PM__1_-removebg-preview.png" alt="Imagen 3">
+            <div class="nota-content">
+                <h2></h2>
+                <p>"Nuevas experiencias, nuevas perspectivas."</p>
+            </div>
+        </div>
+
+        
+</body>
+</html>
+
+<!-- Botón de audio -->
+        <button class="audio-button" onclick="toggleAudio()">
+            <img src="https://img.icons8.com/ios-filled/50/ff4d4d/speaker.png" alt="Audio">
+        </button>
+        
+        <audio id="audio" src="C:\Users\maria\Downloads\WhatsApp Audio 2024-10-29 at 7.42.35 AM.mpeg"></audio>
+    </div>
+
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+

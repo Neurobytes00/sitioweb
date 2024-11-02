@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\tr.png">
+
+    <title>¡Tristeza!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Cambiado a columna para alinear el logo y el contenido */
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #bbdefb, #90caf9, #64b5f6, #42a5f5); /* Fondo en tonos azules suaves */
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif; /* Fuente elegante para el título */
+            font-size: 3rem; /* Tamaño del título */
+            margin-top: 10px; /* Espaciado entre el logo y el título */
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .flip-btn {
+            background-color: #42a5f5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #1e3c72;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #274B79;
+            text-shadow: 0 0 5px rgba(39, 75, 121, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Juego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1></h1>
+    
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <a href="infotristeza1.html">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.15.19 PM.jpeg" alt="Tristeza imagen 1">
+                <h5 class="card-title">¿Qué es la tristeza?</h5>
+                <p>La tristeza es una emoción normal que todos experimentamos.</p>
+                <button class="btn flip-btn">Más información</button>
+            </div>
+            <div class="back">
+                <h5 class="card-title">¿Cómo mejorarla?</h5>
+                <p>Habla con alguien, realiza ejercicio, o practica actividades que disfrutes.</p>
+                <button class="btn flip-btn">Volver</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <a href="infotristeza2.html">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.17.23 PM.jpeg" alt="Tristeza imagen 2">
+                <h5 class="card-title"></h5>
+                <p></p>
+                <button class="btn flip-btn">Más información</button>
+            </div>
+            <div class="back">
+                <h5 class="card-title">Consejos para superarla</h5>
+                <p>Busca apoyo, medita, o realiza actividades creativas.</p>
+                <button class="btn flip-btn">Volver</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <a href="infotristeza3.html">
+                <img src="C:\Users\maria\Downloads\WhatsApp Image 2024-10-22 at 6.15.19 PM.jpeg" alt="Tristeza imagen 3">
+                <h5 class="card-title">Efectos de la tristeza</h5>
+                <p>Puede afectar tu salud mental y física si no se maneja adecuadamente.</p>
+                <button class="btn flip-btn">Más información</button>
+            </div>
+            <div class="back">
+                <h5 class="card-title">Formas de afrontar</h5>
+                <p>Escribe un diario, haz yoga o escúchate a ti mismo.</p>
+                <button class="btn flip-btn">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('.flip-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.card');
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo de Burbujas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #0d47a1; /* Fondo azul oscuro */
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(13, 71, 161, 0.7); /* Azul oscuro translúcido */
+            border-radius: 50%;
+            animation: bubble-move 10s infinite ease-in;
+            opacity: 0.7;
+        }
+
+        @keyframes bubble-move {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Variaciones de tamaño y animación para las burbujas */
+        .bubble:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 6s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 25px;
+            height: 25px;
+            left: 40%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 15px;
+            height: 15px;
+            left: 60%;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 35px;
+            height: 35px;
+            left: 80%;
+            animation-duration: 9s;
+            animation-delay: 0.5s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 45px;
+            height: 45px;
+            left: 10%;
+            animation-duration: 10s;
+            animation-delay: 1.5s;
+        }
+
+        .bubble:nth-child(6) {
+            width: 30px;
+            height: 30px;
+            left: 70%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de burbujas -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <script>
+        // Generar más burbujas
+        for (let i = 0; i < 15; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.width = `${Math.random() * 40 + 20}px`;
+            bubble.style.height = bubble.style.width;
+            bubble.style.animationDuration = `${Math.random() * 5 + 6}s`;
+            bubble.style.animationDelay = `${Math.random() * 2}s`;
+            document.body.appendChild(bubble);
+        }
+
+    </script>
+    
+
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha y Nota Informativa</title>
+    <style>
+        /* Contenedor para centrar la flecha y la nota */
+        .contenedor-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        /* Flecha animada */
+        .flecha {
+            width: 20px;
+            height: 20px;
+            border-top: 4px solid #333;
+            border-right: 4px solid #333;
+            transform: rotate(45deg);
+            animation: bounce 1s infinite;
+        }
+
+        /* Animación de la flecha */
+        @keyframes bounce {
+            0%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+        }
+
+        /* Estilo de la nota informativa */
+        .nota {
+            padding: 10px 15px;
+            background-color: #f0f8ff;
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-left: 4px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-info">
+        <div class="flecha"></div>
+        <div class="nota">
+            ¡Tan solo pasar el mouse por algunas de nuestras tarjetas y presionar el boton que hay en ellas puedes acceder a la informacion!
+        </div>
+    </div>
+</body>
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

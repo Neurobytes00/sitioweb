@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\en.png">
+
+    <title>¡Furia!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ffebee, #ffcccb, #ef5350, #e57373);
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .flip-btn {
+            background-color: #ef5350;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #b71c1c;
+            text-shadow: 0 0 5px rgba(183, 28, 28, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href=""></a>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Ajustada</title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="110" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+                
+                
+            </ul>
+        </div>
+    </nav>
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\en.png" href="C:\Users\maria\Downloads\en.png">>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <title>¡¿Que es?!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(220, 20, 60, 0.7), rgba(178, 34, 34, 0.6), rgba(255, 99, 71, 0.5));
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+            margin: 0; /* Eliminar márgenes por defecto */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 5px 15px; /* Reducido el padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Asegurarse de que la barra de navegación ocupe todo el ancho */
+            position: fixed; /* Fijar la barra de navegación en la parte superior */
+            top: 0; /* Fijar en la parte superior */
+            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        }
+
+        .content-container {
+            color: white; /* Texto en blanco */
+            padding: 20px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+            margin-top: 70px; /* Dejar espacio para la barra de navegación */
+            margin-left: auto; /* Centrar horizontalmente */
+            margin-right: auto; /* Centrar horizontalmente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; /* Bordes redondeados */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 30px; /* Espacio interno */
+            text-align: center; /* Centrando el texto */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px; /* Espacio en la parte superior de los títulos */
+        }
+
+        p, ul {
+            margin: 10px 0; /* Espacio entre párrafos y listas */
+        }
+
+        /* Estilo de lista */
+        ul {
+            padding-left: 20px; /* Espacio a la izquierda para las listas */
+        }
+
+        /* Animación de partículas de "fuego" */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    
+    
+                </li>
+                
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <title>¡Como Gestionarla!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(220, 20, 60, 0.7), rgba(178, 34, 34, 0.6), rgba(255, 99, 71, 0.5));
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+            margin: 0; /* Eliminar márgenes por defecto */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 5px 15px; /* Reducido el padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Asegurarse de que la barra de navegación ocupe todo el ancho */
+            position: fixed; /* Fijar la barra de navegación en la parte superior */
+            top: 0; /* Fijar en la parte superior */
+            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        }
+
+        .content-container {
+            color: white; /* Texto en blanco */
+            padding: 20px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+            margin-top: 70px; /* Dejar espacio para la barra de navegación */
+            margin-left: auto; /* Centrar horizontalmente */
+            margin-right: auto; /* Centrar horizontalmente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; /* Bordes redondeados */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 30px; /* Espacio interno */
+            text-align: center; /* Centrando el texto */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px; /* Espacio en la parte superior de los títulos */
+        }
+
+        p, ul {
+            margin: 10px 0; /* Espacio entre párrafos y listas */
+        }
+
+        /* Estilo de lista */
+        ul {
+            padding-left: 20px; /* Espacio a la izquierda para las listas */
+        }
+
+        /* Animación de partículas de "fuego" */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <div class="content-container">
+            <div>
+                <section>
+                    <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.23_PM__1_-removebg-preview.png" alt="El aburrimiento" class="img-fluid float-right ml-4" width="300" height="300">
+                    <h2 class="title">Consejos para Gestionar la Furia:</h2>
+                    <p>1.Reconocer los desencadenantes: Identifica las situaciones o personas que provocan tu furia. Conocer tus desencadenantes te ayudará a anticipar y manejar tus reacciones.
+<br>
+<br>
+           2.Practicar la respiración profunda: Cuando sientas que la furia comienza a surgir, toma un momento para respirar profundamente. Inhala por la nariz, mantén el aire unos segundos y exhala lentamente por la boca.
+<br>
+<br>
+          3.Hacer una pausa: Tómate un tiempo antes de responder. Alejarte de la situación o darte unos minutos para calmarte puede ayudar a evitar reacciones impulsivas.
+
+                   </p>
+
+                </section>
+
+                <section>
+                    <h3 class="title"></h3>
+                    <p>4.Expresar tus sentimientos: Habla sobre lo que te molesta, pero hazlo de manera asertiva y respetuosa. Comunicar tus sentimientos puede ayudar a resolver conflictos.
+<br>
+<br>
+5.Practicar la relajación: Dedica tiempo a actividades que te relajen, como el yoga, la meditación o paseos al aire libre. Esto puede ayudar a reducir la tensión acumulada.
+<br>
+<br>
+6.Buscar soluciones: En lugar de centrarte en lo que te causa enojo, enfócate en encontrar soluciones a los problemas. Esto puede ayudarte a sentirte más empoderado.</p>
+                    <ul>
+                        
+                    </ul>
+                </section>
+
+                <section class="statistics">
+                    <h3></h3>
+                    <p></p>
+                    <p><span></span></p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Crear partículas de "fuego"
+        function createParticles() {
+            const particleCount = 50; // Número de partículas de "fuego"
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.backgroundColor = `rgba(255, ${Math.floor(Math.random() * 80 + 20)}, 0, 0.8)`;
+                document.body.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/3/1z7h6n5/zXgOnPxSRJ/ZB4nY8WZmGF6p4t75" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-wXjPDIr3VI69A4SBos/j7JvUAd6h30F5m4K1q/LwB/Y+Q2o0H12P97TTIZtx/hvH" crossorigin="anonymous"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>¡Como Gestionarla!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(220, 20, 60, 0.7), rgba(178, 34, 34, 0.6), rgba(255, 99, 71, 0.5));
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+            margin: 0; /* Eliminar márgenes por defecto */
+            position: relative; /* Para posicionar el botón de audio */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Estilo del botón de audio */
+        .audio-button {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .audio-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .audio-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-container {
+            color: white; /* Texto en blanco */
+            padding: 20px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+            margin-top: 70px; /* Dejar espacio para la barra de navegación */
+            margin-left: auto; /* Centrar horizontalmente */
+            margin-right: auto; /* Centrar horizontalmente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; /* Bordes redondeados */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 30px; /* Espacio interno */
+            text-align: center; /* Centrando el texto */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px; /* Espacio en la parte superior de los títulos */
+        }
+
+        p, ul {
+            margin: 10px 0; /* Espacio entre párrafos y listas */
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+       
+
+            <!-- Agrega aquí más contenido según sea necesario -->
+        </div>
+
+        <!-- Botón de audio -->
+        <button class="audio-button" onclick="toggleAudio()">
+            <img src="https://img.icons8.com/ios-filled/50/ff4d4d/speaker.png" alt="Audio">
+        </button>
+        
+        <audio id="audio" src="C:\Users\maria\Downloads\WhatsApp Audio 2024-10-26 at 7.19.03 PM.mpeg"></audio>
+    </main>
+
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha y Nota Informativa</title>
+    <style>
+        /* Contenedor para centrar la flecha y la nota */
+        .contenedor-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        /* Flecha animada */
+        .flecha {
+            width: 20px;
+            height: 20px;
+            border-top: 4px solid #333;
+            border-right: 4px solid #333;
+            transform: rotate(45deg);
+            animation: bounce 1s infinite;
+        }
+
+        /* Animación de la flecha */
+        @keyframes bounce {
+            0%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+        }
+
+        /* Estilo de la nota informativa */
+        .nota {
+            padding: 10px 15px;
+            background-color: #f0f8ff;
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-left: 4px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-info">
+        <div class="flecha"></div>
+        <div class="nota">
+            ¡Presiona el boton del megafono, para escuchar a nuestro personaje! .
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://i.pinimg.com/enabled_hi/564x/f0/e2/f1/f0e2f174691036740cb9c695bb940ad6.jpg">
+
+    <title>Principal 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #ffecd2, #fcb69f);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
+            margin: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Estilos de la barra de navegación */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 0;
+            width: calc(100% - 40px); /* Ancho total menos 2 cm en cada lado */
+            margin: 0 20px; /* Margen de 20px en cada lado */
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ff6f61; /* Color de hover */
+        }
+
+        .nav-link {
+            color: #333; /* Color de texto */
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff6f61; /* Color de hover */
+            text-shadow: 0 0 5px rgba(255, 111, 97, 0.7);
+            transform: scale(1.1);
+        }
+
+        .video-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            z-index: 1;
+            margin-top: 100px; /* Espacio para la barra de navegación */
+            position: relative;
+        }
+
+        .video-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #ff6f61;
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .video-frame:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Estilos del botón interactivo */
+        button {
+            padding: 12px 30px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+            border-radius: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        button:hover::before {
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+        }
+
+        button:hover {
+            background-color: #f5564e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 111, 97, 0.3);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+
+        button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Burbujas */
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: subir 8s infinite ease-in-out;
+        }
+
+        @keyframes subir {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(30px);
+            }
+            100% {
+                bottom: 100vh;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="thankyou.html" img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="160" height="70">></a>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="160" height="70">
+</body>
+</html>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/maria/OneDrive/Imágenes/PAGINA%20COMPLETA/Index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/maria/OneDrive/Imágenes/PAGINA%20COMPLETA/JuegoEmociones%20-%20copia.html">Juego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/maria/OneDrive/Imágenes/PAGINA%20COMPLETA/Escoge.html">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/maria/OneDrive/Imágenes/PAGINA%20COMPLETA/Administrador.html">Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/maria/OneDrive/Imágenes/PAGINA%20COMPLETA/Formulario2.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="video-container">
+        <h1>¡Disfruta de nuestro Video!</h1>
+        <!-- Video HTML5 con controles -->
+        <video class="video-frame" id="miVideo" controls>
+            <source src="tu_video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <br>
+        <button onclick="reiniciarVideo()"><span>Reiniciar Video</span></button>
+    </div>
+
+    <script>
+        function reiniciarVideo() {
+            const video = document.getElementById('miVideo');
+            video.currentTime = 0; // Reinicia el video desde el inicio
+            video.play(); // Opcional: inicia la reproducción automáticamente
+            generarBurbujas(); // Llama a la función para generar burbujas
+        }
+
+        function generarBurbujas() {
+            for (let i = 0; i < 10; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.style.left = Math.random() * window.innerWidth + 'px'; // Posición horizontal aleatoria
+                bubble.style.backgroundColor = getRandomColorLindo(); // Color aleatorio
+                bubble.style.width = Math.random() * 20 + 20 + 'px'; // Tamaño aleatorio
+                bubble.style.height = bubble.style.width; // Mantiene la proporción
+                document.body.appendChild(bubble);
+
+                // Elimina la burbuja después de la animación
+                bubble.addEventListener('animationend', () => {
+                    bubble.remove();
+                });
+            }
+        }
+
+        function getRandomColorLindo() {
+            const colors = [
+                '#ffadad', // Rosa suave
+                '#ffd6a5', // Naranja suave
+                '#fdffb6', // Amarillo suave
+                '#caffbf', // Verde suave
+                '#9bfbcf', // Aqua suave
+                '#a0c4ff', // Azul suave
+                '#b9b9ff', // Lavanda suave
+                '#ffc3a0'  // Melocotón suave
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Generar burbujas al cargar la página
+        window.onload = function() {
+            generarBurbujas();
+        };
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-66Sx00z9xG4jD2dfN+Dx5I4csZxS3IQe9Y8q4shMk4fQsRo+v5ax9FLH4RI7z2G8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-oBqDVmMz4fnFO9gybU7hQ6TO+/6oX/oK8D5B4clx4n5+5Yh7wxRrsU5IbWQjV1Hk" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,702 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\en.png">
+
+    <title>¡Furia!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ffebee, #ffcccb, #ef5350, #e57373);
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .flip-btn {
+            background-color: #ef5350;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #b71c1c;
+            text-shadow: 0 0 5px rgba(183, 28, 28, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href=""></a>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Ajustada</title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="110" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+                
+                
+            </ul>
+        </div>
+    </nav>
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\en.png" href="C:\Users\maria\Downloads\en.png">>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <title>¡¿Que es?!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(220, 20, 60, 0.7), rgba(178, 34, 34, 0.6), rgba(255, 99, 71, 0.5));
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+            margin: 0; /* Eliminar márgenes por defecto */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 5px 15px; /* Reducido el padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Asegurarse de que la barra de navegación ocupe todo el ancho */
+            position: fixed; /* Fijar la barra de navegación en la parte superior */
+            top: 0; /* Fijar en la parte superior */
+            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        }
+
+        .content-container {
+            color: white; /* Texto en blanco */
+            padding: 20px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+            margin-top: 70px; /* Dejar espacio para la barra de navegación */
+            margin-left: auto; /* Centrar horizontalmente */
+            margin-right: auto; /* Centrar horizontalmente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; /* Bordes redondeados */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 30px; /* Espacio interno */
+            text-align: center; /* Centrando el texto */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px; /* Espacio en la parte superior de los títulos */
+        }
+
+        p, ul {
+            margin: 10px 0; /* Espacio entre párrafos y listas */
+        }
+
+        /* Estilo de lista */
+        ul {
+            padding-left: 20px; /* Espacio a la izquierda para las listas */
+        }
+
+        /* Animación de partículas de "fuego" */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    
+    
+                </li>
+                
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" href="C:\Users\maria\Downloads\en.png">
+    
+    <title>¡Efectos!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo con gradiente animado */
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(220, 20, 60, 0.7), rgba(178, 34, 34, 0.6), rgba(255, 99, 71, 0.5));
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden; /* Para contener las partículas */
+            margin: 0; /* Eliminar márgenes por defecto */
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de animación para partículas */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+
+        /* Animación de subida */
+        @keyframes rise {
+            0% { transform: translateY(0) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+
+        /* Efecto de parpadeo */
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 5px 15px; /* Reducido el padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Asegurarse de que la barra de navegación ocupe todo el ancho */
+            position: fixed; /* Fijar la barra de navegación en la parte superior */
+            top: 0; /* Fijar en la parte superior */
+            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        }
+
+        .content-container {
+            color: white; /* Texto en blanco */
+            padding: 20px;
+            width: 90%; /* Ancho ajustado */
+            max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+            margin-top: 70px; /* Dejar espacio para la barra de navegación */
+            margin-left: auto; /* Centrar horizontalmente */
+            margin-right: auto; /* Centrar horizontalmente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px; /* Bordes redondeados */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 30px; /* Espacio interno */
+            text-align: center; /* Centrando el texto */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px; /* Espacio en la parte superior de los títulos */
+        }
+
+        p, ul {
+            margin: 10px 0; /* Espacio entre párrafos y listas */
+        }
+
+        /* Estilo de lista */
+        ul {
+            padding-left: 20px; /* Espacio a la izquierda para las listas */
+        }
+
+        /* Animación de partículas de "fuego" */
+        .particle {
+            position: absolute;
+            bottom: -100px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 69, 0, 0.8); /* Color inicial de la partícula */
+            border-radius: 50%;
+            animation: rise 5s linear infinite, flicker 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Dinámico Creativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Fuente elegante -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Manteniendo el fondo original */
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Usar flexbox para centrar */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            height: 100vh; /* Usar el 100% de la altura de la ventana */
+        }
+
+        .container {
+            max-width: 800px; /* Aumenta el ancho para acomodar imágenes */
+            margin: 20px auto; /* Añade un margen superior para bajar el contenido */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive; /* Fuente elegante */
+            text-align: center;
+            color: #ff4d4d; /* Color rojo */
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); /* Sombra para el brillo */
+            font-size: 3em; /* Aumentar tamaño de la fuente */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        .fancy-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fancy-list li {
+            background: #ffe6e6; /* Fondo claro para cada elemento */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff4d4d; /* Borde rojo */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            position: relative; /* Para el efecto de expansión */
+            overflow: hidden; /* Para que el contenido no sobresalga */
+            transition: background 0.3s;
+        }
+
+        .fancy-list li:hover {
+            background: #ffd6d6; /* Cambia el fondo al pasar el mouse */
+        }
+
+        .hidden-content {
+            display: none; /* Oculta el contenido adicional inicialmente */
+            margin-top: 10px;
+            color: #6c757d;
+        }
+
+        .fancy-list li.active .hidden-content {
+            display: block; /* Muestra el contenido adicional si está activo */
+        }
+
+        .fancy-list h2 {
+            margin: 0;
+            color: #ff4d4d; /* Color rojo para el encabezado */
+            text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.5); /* Sombra para el brillo */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Efectos de Furia</h1>
+        <ul class="fancy-list">
+            <li>
+                <h2>1.Efectos Físicos:</h2>
+                <div class="hidden-content">1.Problemas digestivos: La emoción intensa puede alterar el sistema digestivo, provocando síntomas como náuseas, indigestión o síndrome de intestino irritable.
+<br>
+<br>
+                2.Debilitamiento del sistema inmunológico: La exposición constante a la furia puede afectar la respuesta inmunológica, aumentando la vulnerabilidad a enfermedades.
+                <br>
+                <br>
+
+         3.Dificultades para dormir: La furia puede hacer que sea difícil relajarse, llevando a insomnio y fatiga.</div>
+            </li>
+            <li>
+                <h2>2.Efectos Psicológicos:</h2>
+                <div class="hidden-content">1.Ansiedad y estrés: La furia puede generar ciclos de estrés y ansiedad al revivir situaciones que provocan enojo. Además, la furia crónica puede contribuir a síntomas depresivos si no se expresa de manera saludable.
+  <br>
+                    <br>
+2.Sentimientos de culpa y vergüenza: Tras un episodio de furia, muchas personas pueden experimentar remordimientos, lo que puede generar sentimientos de culpa y vergüenza.
+  <br>
+                    <br>
+3.Aislamiento social: Las personas que se enojan con frecuencia pueden encontrar dificultades para mantener relaciones, lo que puede llevar al aislamiento y la soledad.
+  <br>
+                    <br>
+</div>
+            </li>
+            <li>
+                <h2>3.Impacto en las Relaciones:</h2>
+                <div class="hidden-content">1.Conflictos frecuentes: La furia puede llevar a peleas y malentendidos en relaciones personales, familiares y laborales.
+                     <br>
+                    <br>
+        2.Pérdida de confianza y respeto: Las explosiones de enojo pueden erosionar la confianza y el respeto en las relaciones, haciendo que otros se sientan inseguros o temerosos.
+                    <br>
+                    <br>
+        3.Problemas de comunicación: La furia dificulta la escucha activa y el entendimiento mutuo, lo que puede obstaculizar la resolución de conflictos.</div>
+            </li>
+            <li>
+                <h2>4.Consecuencias en la Toma de Decisiones:</h2>
+                <div class="hidden-content">1.Decisiones impulsivas: La furia puede llevar a decisiones rápidas y poco reflexivas, lo que podría tener repercusiones negativas en la vida personal o profesional.
+                    <br>
+                    <br>
+             2.Dificultad para resolver problemas: La furia puede nublar el juicio, haciendo que sea más difícil encontrar soluciones efectivas a los problemas.</div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Selecciona todos los elementos de la lista
+        const listItems = document.querySelectorAll('.fancy-list li');
+
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Alterna la clase activa en el elemento clicado
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+                <section class="statistics">
+                    <h3></h3>
+                    <p></p>
+                    <p><span></span></p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Crear partículas de "fuego"
+        function createParticles() {
+            const particleCount = 50; // Número de partículas de "fuego"
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.backgroundColor = `rgba(255, ${Math.floor(Math.random() * 80 + 20)}, 0, 0.8)`;
+                document.body.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/3/1z7h6n5/zXgOnPxSRJ/ZB4nY8WZmGF6p4t75" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-wXjPDIr3VI69A4SBos/j7JvUAd6h30F5m4K1q/LwB/Y+Q2o0H12P97TTIZtx/hvH" crossorigin="anonymous"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Vintage Móviles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet"> <!-- Fuente vintage -->
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f5f5dc; /* Color de fondo suave */
+            margin: 0;
+            padding: 20px;
+            overflow: hidden; /* Evitar barra de desplazamiento */
+        }
+
+        .note {
+            width: 200px; /* Ancho de la nota */
+            padding: 15px;
+            margin: 20px;
+            background-color: #fff5e1; /* Color de fondo de la nota */
+            border: 2px solid #ff4d4d; /* Borde rojo */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute; /* Posicionamiento absoluto para mover */
+            cursor: move; /* Cambia el cursor al pasar sobre la nota */
+            transition: transform 0.1s; /* Suave efecto al mover */
+        }
+
+        .note img {
+            width: 100%; /* Ancho de la imagen */
+            border-radius: 5px; /* Esquinas redondeadas para la imagen */
+            margin-bottom: 10px; /* Espacio entre imagen y texto */
+        }
+
+        .note h3 {
+            margin: 0;
+            color: #8b5a2b; /* Color del texto del encabezado */
+        }
+
+        .note p {
+            margin: 5px 0 0;
+            color: #6b4f3b; /* Color del texto del cuerpo */
+        }
+    </style>
+</head>
+<body>
+
+  
+
+    <div class="note" style="top: 150px; left: 250px;">
+        <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.23_PM__1_-removebg-preview.png" alt="Imagen 2">
+        <h3></h3>
+        <p>¡Presiona el listado para ver su contenido!</p>
+    </div>
+
+    
+
+    <div class="note" style="top: 400px; left: 350px;">
+        <img src="C:\Users\maria\Downloads\LOLALA.png" alt="Imagen 4">
+        <h3></h3>
+        <p>!Para mover la tarjeta mantenla presionada y ubicala donde quieras!</p>
+    </div>
+
+    <script>
+        // Hacer las notas móviles
+        const notes = document.querySelectorAll('.note');
+
+        notes.forEach(note => {
+            note.addEventListener('mousedown', (e) => {
+                let offsetX = e.clientX - note.getBoundingClientRect().left;
+                let offsetY = e.clientY - note.getBoundingClientRect().top;
+
+                function mouseMoveHandler(e) {
+                    note.style.left = e.clientX - offsetX + 'px';
+                    note.style.top = e.clientY - offsetY + 'px';
+                }
+
+                function mouseUpHandler() {
+                    window.removeEventListener('mousemove', mouseMoveHandler);
+                    window.removeEventListener('mouseup', mouseUpHandler);
+                }
+
+                window.addEventListener('mousemove', mouseMoveHandler);
+                window.addEventListener('mouseup', mouseUpHandler);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

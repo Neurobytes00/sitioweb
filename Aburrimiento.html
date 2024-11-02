@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\ab.png">
+
+    <title>¡Aburrimiento!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #d0e9a1, #5a8a3b, #7cbd4b, #a2c6a5);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            position: sticky;
+            top: 20px; /* Espacio desde la parte superior */
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #5a8a3b;
+            transform: scale(1.1);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: white;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flip-btn {
+            background-color: #5a8a3b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #3e6a2b;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            color: #343a40;
+        }
+
+        .divider {
+            border-top: 2px solid #28a745; /* Línea verde */
+            margin: 20px 0;
+        }
+
+        .footer-images img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <!-- Tarjetas Dinámicas -->
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.15.19_PM__1_-removebg-preview.png" alt="Aburrimiento imagen 1">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <button class="btn btn-primary flip-btn">Más información</button>
+                    </div>
+                </div>
+                <div class="back">
+                    <a href="infoaburrimiento1.html">
+                    <div class="card-body">
+                        <h5 class="card-title">¿Qué es el aburrimiento?</h5>
+                        <p class="card-text">El aburrimiento es un estado emocional caracterizado por la falta de interés y la insatisfacción.</p>
+                        <button class="btn btn-secondary flip-btn">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <a href="infoaburrimiento2.html">
+                    <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.17.22_PM__1_-removebg-preview.png" alt="Aburrimiento imagen 2">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <button class="btn btn-primary flip-btn">Más información</button>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="card-body">
+                        <h5 class="card-title">Consecuencias del aburrimiento</h5>
+                        <p class="card-text">Puede llevar a comportamientos impulsivos, ansiedad, o problemas de atención.</p>
+                        <button class="btn btn-secondary flip-btn">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="infoaburrimiento3.html">
+                <div class="front">
+                    <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.15.19_PM__1_-removebg-preview.png" alt="Aburrimiento imagen 3">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <button class="btn btn-primary flip-btn">Más información</button>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="card-body">
+                        <h5 class="card-title">¿Cómo combatirlo?</h5>
+                        <p class="card-text">Participar en actividades nuevas, practicar hobbies o meditación puede ayudar a reducir el aburrimiento.</p>
+                        <button class="btn btn-secondary flip-btn">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flecha y Nota Informativa</title>
+    <style>
+        /* Contenedor para centrar la flecha y la nota */
+        .contenedor-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        /* Flecha animada */
+        .flecha {
+            width: 20px;
+            height: 20px;
+            border-top: 4px solid #333;
+            border-right: 4px solid #333;
+            transform: rotate(45deg);
+            animation: bounce 1s infinite;
+        }
+
+        /* Animación de la flecha */
+        @keyframes bounce {
+            0%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+        }
+
+        /* Estilo de la nota informativa */
+        .nota {
+            padding: 10px 15px;
+            background-color: #f0f8ff;
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-left: 4px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-info">
+        <div class="flecha"></div>
+        <div class="nota">
+            ¡Tan solo pasar el mouse por algunas de nuestras tarjetas y presionar el boton que hay en ellas puedes acceder a la informacion!
+        </div>
+    </div>
+</body>
+</html>

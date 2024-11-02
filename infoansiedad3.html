@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\an.png">
+
+    <title>¡Ansiedad!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #e8eaf6, #d1c4e9, #b39ddb, #9fa8da);
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fondo de estrellas dinámicas */
+        .star {
+            width: 5px;
+            height: 5px;
+            background-color: #4a148c;
+            position: absolute;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out alternate;
+            box-shadow: 0 0 10px rgba(74, 20, 140, 0.7);
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive; /* Cambiado a fuente más elegante */
+            font-size: 3rem;
+            margin-top: 10px;
+            color: #4a148c;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para darle más profundidad */
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            justify-content: center; /* Centra la barra de navegación */
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #274B79;
+            text-shadow: 0 0 5px rgba(39, 75, 121, 0.7);
+        }
+
+        .text-container {
+            position: relative; /* Para posicionar elementos dentro */
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+            border: 2px solid #6a5acd; /* Borde en tono morado */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 40px; /* Espaciado interno aumentado */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            max-width: 800px; /* Ancho máximo aumentado */
+            margin: 20px; /* Margen */
+        }
+
+        .text-container h2 {
+            color: #6a5acd; /* Color del título */
+            margin-bottom: 15px; /* Espaciado inferior aumentado */
+            font-family: 'Dancing Script', cursive; /* Cambiado a fuente más elegante */
+            font-size: 2.5rem; /* Tamaño de fuente ajustado */
+            text-align: center; /* Centra el texto */
+        }
+
+        .text-container p {
+            color: #333; /* Color del texto */
+            line-height: 1.6; /* Espaciado entre líneas */
+        }
+
+        .moving-image {
+            position: absolute; /* Posicionamiento absoluto */
+            width: 80px; /* Ancho de la imagen */
+            top: 100%; /* Comienza justo debajo del contenedor de texto */
+            animation: move 5s linear infinite; /* Animación */
+        }
+
+        @keyframes move {
+            0% {
+                left: -100px; /* Comienza fuera de la vista a la izquierda */
+            }
+            50% {
+                left: calc(100% + 100px); /* Se mueve fuera de la vista a la derecha */
+            }
+            100% {
+                left: -100px; /* Vuelve a la posición inicial */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor de Texto Dinámico</title>
+    <style>
+        body {
+            background: radial-gradient(circle, rgba(215, 204, 255, 0.7), rgba(169, 134, 255, 0.7));
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            animation: backgroundPulse 8s infinite alternate;
+        }
+
+        @keyframes backgroundPulse {
+            0% {
+                background: radial-gradient(circle, rgba(215, 204, 255, 0.7), rgba(169, 134, 255, 0.7));
+            }
+            100% {
+                background: radial-gradient(circle, rgba(235, 224, 255, 0.8), rgba(149, 114, 235, 0.8));
+            }
+        }
+
+        .text-container {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #6a5acd;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .text-container h2 {
+            color: #6a5acd;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .text-container p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .small-image {
+            width: 50%; /* Ajuste de tamaño de imagen más pequeña */
+            max-width: 300px; /* Tamaño máximo de la imagen */
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .small-image:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-image {
+            position: absolute;
+            width: 80px;
+            top: 15px;
+            right: 15px;
+            animation: floatDiagonal 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatDiagonal {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-10px, 15px);
+            }
+            100% {
+                transform: translate(10px, -15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <h2>Tips</h2>
+        <p>1.Es crucial que tanto las personas que experimentan ansiedad como sus seres queridos reconozcan los signos y síntomas asociados a esta condición. La comprensión y el apoyo son fundamentales para ayudar a quienes sufren de ansiedad a buscar el tratamiento adecuado. Esto puede incluir la terapia, la medicación y diversas estrategias de autocuidado, como la práctica de la meditación, el ejercicio regular y el establecimiento de una rutina diaria.
+            <br>
+             <br>
+
+       2. Con el apoyo adecuado y las herramientas adecuadas, las personas pueden aprender a manejar su ansiedad de manera efectiva, permitiéndoles vivir una vida más plena y satisfactoria. La recuperación es un proceso, y cada paso hacia la comprensión y el manejo de la ansiedad es un paso hacia una mejor calidad de vida. Al final, se trata de encontrar el equilibrio entre aceptar la ansiedad como una parte de la experiencia humana y desarrollar las habilidades necesarias para superarla.</p>
+        
+        <!-- Imagen más pequeña dentro del contenedor -->
+        <img src="C:\Users\maria\Downloads\PHOTO-2024-10-22-23-38-52-removebg-preview (1).png" alt="Imagen Principal" class="small-image">
+        
+        <!-- Imagen flotante con animación diagonal -->
+        <img src="C:\Users\maria\Downloads\WhatsApp_Image_2024-10-22_at_6.15.19_PM__4_-removebg-preview.png" alt="Imagen Flotante" class="floating-image">
+    </div>
+</body>
+</html>
+

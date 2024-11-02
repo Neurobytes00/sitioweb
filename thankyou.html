@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo del cuerpo y fondo dinámico */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffccff, #cceeff, #ffb3e6);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            animation: backgroundShift 10s infinite alternate;
+            position: relative;
+        }
+
+        /* Fondo dinámico */
+        @keyframes backgroundShift {
+            0% { background-position: left top; }
+            100% { background-position: right bottom; }
+        }
+
+        /* Mensaje de bienvenida */
+        .welcome-message {
+            position: absolute;
+            top: 20px;
+            font-size: 3em;
+            font-weight: bold;
+            color: #444;
+            text-align: center;
+            width: 100%;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out;
+            font-family: 'Pacifico', cursive;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            gap: 20px;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Línea divisoria */
+        .divider {
+            width: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+
+        /* Estilo de cada mitad */
+        .half {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Contenedor del video */
+        .video-container {
+            position: relative;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        video {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Estilo de las burbujas */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            animation: bubbleAnimation 1.5s ease-out forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes bubbleAnimation {
+            from { transform: scale(0.3); opacity: 1; }
+            to { transform: scale(1.5); opacity: 0; top: -30px; }
+        }
+
+        /* Contenedor del PDF */
+        .pdf-container {
+            width: 80%;
+            background-color: rgba(255, 235, 240, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        iframe.pdf-viewer {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        /* Nota sobre salud mental */
+        .note {
+            background-color: rgba(245, 183, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            color: #444;
+            text-align: center;
+            margin-top: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mensaje de bienvenida -->
+    <div class="welcome-message">Gracias por vernos</div>
+
+    <div class="container">
+        <!-- Sección del PDF con nota -->
+        <div class="half">
+            <div class="pdf-container">
+                <iframe class="pdf-viewer" src="C:\Users\maria\Downloads\Manual de marca (2) (1).pdf" title="PDF Document"></iframe>
+            </div>
+            <div class="note">✨ "La salud mental es tan importante como la salud física. Dedica tiempo a cuidarte y reflexionar."</div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="divider"></div>
+
+        <!-- Sección del video con burbujas y nota -->
+        <div class="half">
+            <div class="video-container" onclick="showBubbles(event)">
+                <video controls>
+                    <source src="C:\Users\maria\Downloads\WhatsApp Video 2024-10-26 at 1.59.24 PM.mp4"type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+            <div class="note">💡 "Recuerda respirar profundamente y dar un paso a la vez. Cada pequeño avance cuenta."</div>
+        </div>
+    </div>
+
+    <script>
+        // Generador de burbujas de colores al hacer clic
+        function showBubbles(event) {
+            for (let i = 0; i < 5; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
+                bubble.style.width = `${Math.random() * 20 + 20}px`;
+                bubble.style.height = bubble.style.width;
+                bubble.style.left = `${event.clientX - 60 + Math.random() * 120}px`;
+                bubble.style.top = `${event.clientY - 60 + Math.random() * 120}px`;
+                document.body.appendChild(bubble);
+
+                // Remover burbuja después de la animación
+                bubble.addEventListener('animationend', () => bubble.remove());
+            }
+        }
+    </script>
+
+</body>
+</html>

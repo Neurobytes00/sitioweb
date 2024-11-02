@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, rgba(255, 105, 180, 0.8), rgba(30, 144, 255, 0.8), rgba(255, 215, 0, 0.8), rgba(255, 140, 0, 0.8)); /* Colores pastel más fuertes */
+    background-size: 400% 400%; /* Tamaño del fondo para el efecto de rotación */
+    animation: gradient 15s ease infinite; /* Animación de rotación */
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+#person {
+    width: 350px; /* Tamaño de la imagen ajustado */
+    border-radius: 15px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#person:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 28px; /* Tamaño de letra más grande */
+    color: black; /* Color de texto negro */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.button {
+    display: none; /* Ocultar el botón al principio */
+    margin-top: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff4081; /* Color emocional */
+    border-radius: 50px; /* Botón redondeado */
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 24px; /* Tamaño de letra más grande */
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.6); /* Sombra para efecto 3D */
+}
+
+.button:hover {
+    background-color: #ff60a1; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}

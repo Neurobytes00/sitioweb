@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\ab.png">
+
+    <title>¡Aburrimiento!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #d0e9a1, #5a8a3b, #7cbd4b, #a2c6a5);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            position: sticky;
+            top: 20px; /* Espacio desde la parte superior */
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #5a8a3b;
+            transform: scale(1.1);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: white;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flip-btn {
+            background-color: #5a8a3b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #3e6a2b;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            color: #343a40;
+        }
+
+        .divider {
+            border-top: 2px solid #28a745; /* Línea verde */
+            margin: 20px 0;
+        }
+
+        .footer-images img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Juego</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor de Texto Interactivo con Imagen de Fondo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px; /* Agregar un poco de espacio alrededor */
+        }
+
+        .contenedor {
+            background-color: rgba(76, 175, 80, 0.8); /* Color verde con opacidad */
+            color: white; /* Color del texto */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+            width: 100%; /* Ancho del contenedor se ajusta al 100% */
+            max-width: 600px; /* Máximo ancho del contenedor */
+            text-align: center;
+            position: relative; /* Para posicionar la imagen de fondo */
+            overflow: hidden; /* Para evitar que el contenido salga del contenedor */
+            box-sizing: border-box; /* Para incluir padding en el ancho total */
+        }
+
+        .contenedor:hover {
+            background-color: rgba(69, 160, 73, 0.9); /* Color verde más oscuro al pasar el mouse */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contenedor::before {
+            content: "";
+            background-image: url('https://via.placeholder.com/600'); /* URL de la imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para cubrir el contenedor */
+            background-position: center; /* Centra la imagen */
+            position: absolute; /* Posición absoluta */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Envía la imagen detrás del contenido */
+            opacity: 0.3; /* Opacidad de la imagen de fondo */
+            transition: opacity 0.3s; /* Suaviza la transición de opacidad */
+        }
+
+        .contenedor:hover::before {
+            opacity: 0.5; /* Aumenta la opacidad al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>¿Que es el aburrimiento?</h2>
+        <p>El aburrimiento es una emoción o estado mental que se caracteriza por la falta de interés, entusiasmo o excitación en una actividad o entorno. Se puede experimentar cuando una persona siente que no hay nada que le atraiga o que lo mantenga ocupado, lo que puede llevar a una sensación de vacío o insatisfacción.
+<br>
+<br>
+El aburrimiento puede manifestarse de diferentes maneras, como:
+
+1.Falta de motivación: No se siente impulsado a hacer nada en particular.
+<br>
+2.Desconexión: Se percibe que las actividades son monótonas o repetitivas.
+<br>
+3.Frustración: Puede surgir una sensación de irritación o inquietud al no encontrar algo que capte la atención.
+        </p>
+        <p></p>
+        <img src="C:\Users\maria\Downloads\PHOTO-2024-10-22-23-38-52-removebg-preview (1).png" width="400" height="200" alt="Descripción de la imagen">
+    </div>
+</body>
+</html>
+
+
+         
+    
+
+

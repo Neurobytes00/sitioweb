@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="shortcut icon" href="C:\Users\maria\Downloads\tr.png">
+
+    <title>¡Tristeza!</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Cambiado a columna para alinear el logo y el contenido */
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #bbdefb, #90caf9, #64b5f6, #42a5f5); /* Fondo en tonos azules suaves */
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif; /* Fuente elegante para el título */
+            font-size: 3rem; /* Tamaño del título */
+            margin-top: 10px; /* Espaciado entre el logo y el título */
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card .front,
+        .card .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            transition: transform 0.6s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card .back {
+            transform: rotateY(180deg);
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .flip-btn {
+            background-color: #42a5f5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .flip-btn:hover {
+            background-color: #1e3c72;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0 0 30px 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #274B79;
+            text-shadow: 0 0 5px rgba(39, 75, 121, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"></a>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <img src="C:\Users\maria\Downloads\Bytes__1_-removebg-preview (1).png" alt="Descripción de la imagen" width="130" height="70">
+</body>
+</html>S
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Juego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor de Texto con Imagen Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd; /* Fondo azul claro */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 800px; /* Aumentado a 800px */
+            margin: auto;
+            display: flex; /* Usar flexbox para diseño de columnas */
+            flex-direction: row; /* Alinear en filas */
+            gap: 20px; /* Espaciado entre elementos */
+        }
+
+        .texto {
+            flex: 1; /* Ocupa el espacio disponible */
+            display: flex;
+            flex-direction: column; /* Disposición vertical */
+            justify-content: center; /* Centrado vertical */
+        }
+
+        h2 {
+            color: #1e88e5; /* Título en azul */
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            color: #333;
+            margin: 0 0 20px 0;
+            line-height: 1.6; /* Mejorar la legibilidad */
+        }
+
+        .imagen-interactiva {
+            flex: 1; /* Ocupa el espacio disponible */
+            position: relative; /* Posicionamiento relativo */
+            overflow: hidden; /* Para evitar que la imagen se salga del contenedor */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        .imagen-interactiva img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .imagen-interactiva img:hover {
+            transform: scale(1.1); /* Efecto de zoom */
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #1e88e5; /* Color del botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            text-decoration: none; /* Sin subrayado */
+            width: 150px; /* Ancho del botón */
+            align-self: flex-start; /* Alinea el botón al inicio */
+        }
+
+        .button:hover {
+            background-color: #0d47a1; /* Color del botón al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="texto">
+            <h2>¿Que es la tristeza?</h2>
+            <p>
+               1.La tristeza es una emoción intrínseca a la condición humana, y su presencia en nuestras vidas es inevitable. Aunque a menudo la asociamos con el dolor y la pérdida, es fundamental reconocer que la tristeza también tiene un papel positivo y adaptativo..
+               <br>
+               <br>
+               2.Afrontar la tristeza de manera saludable es esencial para nuestro bienestar emocional. Esto implica no solo permitirnos sentir y expresar nuestras emociones, sino también desarrollar estrategias de afrontamiento que nos ayuden a navegar por momentos difíciles
+               <br>
+               <br>
+               3.La tristeza, aunque dolorosa, puede ser el puente hacia una vida emocional más rica y significativa, donde cada emoción, incluida la tristeza, nos acerca un paso más a la plenitud.
+
+            </p>
+             <!-- Botón interactivo -->
+        </div>
+        <div class="imagen-interactiva">
+            <img src="C:\Users\maria\Downloads\PHOTO-2024-10-22-23-38-52-removebg-preview (1).png" alt="Imagen Interactiva">
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Vintage Dinámicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6; /* Fondo claro */
+            margin: 0;
+            padding: 20px;
+            position: relative; /* Posicionamiento relativo para las notas */
+        }
+
+        .nota {
+            width: 200px; /* Ancho de la nota */
+            padding: 20px;
+            background-color: #d1e7ff; /* Color de fondo azul claro */
+            border: 2px solid #8ab6f8; /* Borde azul más oscuro */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: absolute; /* Posición absoluta para mover */
+            cursor: grab; /* Cursor para indicar que se puede arrastrar */
+            transition: transform 0.2s; /* Transición al mover */
+        }
+
+        .nota:hover {
+            transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+        }
+
+        .header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Interactivas</title>
+    <style>
+        /* Estilo base de las notas */
+        .nota {
+            position: fixed;
+            width: 160px;
+            padding: 10px;
+            background-color: #b3e0ff; /* Color azul clarito */
+            color: #333;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: movimientoArribaAbajo 1.5s infinite;
+        }
+
+        /* Animación para el movimiento de las notas */
+        @keyframes movimientoArribaAbajo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Posiciones para cada nota */
+        .nota-1 { top: 20px; left: 20px; animation-delay: 0s; }
+        .nota-2 { top: 20px; right: 20px; animation-delay: 0.3s; }
+        .nota-3 { bottom: 20px; left: 20px; animation-delay: 0.6s; }
+        .nota-4 { bottom: 20px; right: 20px; animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <div class="nota nota-1">📌 "A veces, la tristeza es la forma en que el alma pide un momento de pausa y reflexión."</div>
+    <div class="nota nota-2">📌 "La tristeza no es debilidad; es un recordatorio de que amamos profundamente"</div>
+    <div class="nota nota-3">📌 "Permítete sentir, porque incluso en la tristeza, hay belleza y aprendizaje."</div>
+     <div class="nota nota-4">📌"Las sonrisas pueden ocultar el dolor, pero los ojos nunca mienten."</div>
+</body>
+</html>
+
